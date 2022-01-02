@@ -4,14 +4,14 @@ from flask import Flask,  render_template, url_for, request, flash, session, red
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'flgkigm530lcgg003njlgf'
 
-menu = [{"name": "Установка", "url": "install-flask"},
-        {"name": "Первое приложение", "url": "first-app"},
+menu = [{"name": "Link 1", "url": "install-flask"},
+        {"name": "Link 2", "url": "first-app"},
         {"name": "Contact", "url": "contact"}]
 
 @app.route("/")
 def index():
     print(url_for('index'))
-    return render_template('index.html',title="Про Flask", menu = menu)
+    return render_template('index.html',title="Heading", menu = menu)
 
 @app.route("/contact", methods=["POST", "GET"] )
 def contact():
